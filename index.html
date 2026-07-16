@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Para a Jessica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #f7efe2;
+    --paper-2: #f1e6d3;
+    --polaroid: #fffdf8;
+    --ink: #4a3324;
+    --ink-soft: #7a6350;
+    --rose: #c8697a;
+    --rose-deep: #a94a5c;
+    --gold: #c99a4a;
+    --shadow: rgba(74, 51, 36, 0.25);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(200,105,122,0.06), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(201,154,74,0.08), transparent 45%);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    overflow-x:hidden;
+  }
+
+  .stage{
+    min-height: 100vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    padding: 48px 20px 80px;
+    position: relative;
+  }
+
+  .washi-line{
+    width: min(560px, 92%);
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--ink-soft) 0 6px, transparent 6px 12px);
+    opacity: 0.35;
+    margin: 0 auto 6px;
+  }
+
+  .eyebrow{
+    font-family:'DM Sans', sans-serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--rose-deep);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  h1.title{
+    font-family:'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(40px, 9vw, 68px);
+    line-height: 1;
+    margin: 4px 0 6px;
+    text-align:center;
+    color: var(--ink);
+  }
+
+  .subtitle{
+    text-align:center;
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 380px;
+    margin: 0 auto 34px;
+  }
+
+  .polaroid-rack{
+    position: relative;
+    width: min(560px, 94%);
+    height: 300px;
+    margin-bottom: 26px;
+  }
+
+  .polaroid{
+    position: absolute;
+    background: var(--polaroid);
+    padding: 12px 12px 40px;
+    width: 150px;
+    border-radius: 3px;
+    box-shadow: 0 14px 28px -10px var(--shadow), 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+  }
+  .polaroid:hover{ transform: translateY(-6px) rotate(0deg) scale(1.03) !important; z-index: 20; }
+
+  .polaroid-img{
+    width:100%;
+    height: 150px;
+    object-fit: cover;
+    display:block;
+    background: var(--paper-2);
+    filter: sepia(0.12) saturate(1.05);
+  }
+
+  .polaroid-cap{
+    font-family:'Caveat', cursive;
+    font-size: 18px;
+    text-align:center;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .pin{
+    position:absolute;
+    top:-8px; left:50%;
+    transform: translateX(-50%);
+    width:14px; height:14px;
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #e8899a, var(--rose-deep));
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+
+  #p1{ left: 2%;  top: 10px;  transform: rotate(-9deg); }
+  #p2{ left: 33%; top: -6px;  transform: rotate(4deg);  z-index: 5;}
+  #p3{ right: 2%; top: 18px;  transform: rotate(10deg); }
+
+  #p4{ left: 6%;  top: 30px; transform: rotate(7deg); }
+  #p5{ left: 36%; top: 4px;  transform: rotate(-5deg); z-index: 5;}
+  #p6{ right: 4%; top: 26px; transform: rotate(-11deg); }
+
+  .ask-box{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 22px;
+  }
+
+  .buttons-area{
+    position: relative;
+    width: min(340px, 90vw);
+    height: 68px;
+  }
+
+  .btn{
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 34px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-yes{
+    position:absolute;
+    left: 12px; top: 0;
+    background: var(--rose-deep);
+    color: #fff8f2;
+    box-shadow: 0 10px 22px -8px rgba(169,74,92,0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn-yes:hover{ transform: translateY(-2px) scale(1.03); box-shadow: 0 14px 26px -8px rgba(169,74,92,0.6); }
+  .btn-yes:active{ transform: scale(0.97); }
+
+  .btn-no{
+    position:absolute;
+    left: 200px; top: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1.5px solid var(--ink-soft);
+    transition: left 0.32s cubic-bezier(.2,.8,.2,1), top 0.32s cubic-bezier(.2,.8,.2,1), opacity 0.3s ease;
+  }
+
+  section[id^="scene"]{ display:none; }
+
+  .heart-burst{
+    font-size: 46px;
+    margin-bottom: 6px;
+    animation: pop 0.7s cubic-bezier(.2,.9,.3,1.3);
+  }
+  @keyframes pop{
+    0%{ transform: scale(0); opacity:0; }
+    60%{ transform: scale(1.25); opacity:1; }
+    100%{ transform: scale(1); }
+  }
+
+  .music-note{
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+  .music-note svg{ width:16px; height:16px; }
+
+  .next-btn{
+    margin-top: 30px;
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 32px;
+    border-radius: 999px;
+    border: none;
+    background: var(--ink);
+    color: var(--paper);
+    cursor:pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .next-btn:hover{ transform: translateY(-2px); }
+  .next-btn:disabled{ opacity:0.5; cursor:default; transform:none; }
+
+  .dest-card{
+    width: min(320px, 90vw);
+    background: var(--polaroid);
+    border-radius: 6px;
+    padding: 16px 16px 26px;
+    box-shadow: 0 22px 40px -14px var(--shadow);
+    transform: rotate(-2deg);
+    animation: riseIn 0.9s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes riseIn{
+    0%{ opacity:0; transform: translateY(30px) rotate(-2deg) scale(0.96); }
+    100%{ opacity:1; transform: translateY(0) rotate(-2deg) scale(1); }
+  }
+
+  .dest-img{
+    width:100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 3px;
+    filter: sepia(0.12) saturate(1.05);
+  }
+
+  .dest-cap{
+    font-family:'Caveat', cursive;
+    font-size: 26px;
+    text-align:center;
+    margin-top: 14px;
+    color: var(--ink);
+  }
+
+  .dest-sub{
+    text-align:center;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    margin-top: 4px;
+  }
+
+  .fade-el{ animation: fadeIn 0.8s ease both; }
+  @keyframes fadeIn{ from{opacity:0; transform: translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+  footer.credit{
+    margin-top: 46px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    opacity: 0.55;
+    text-align:center;
+  }
+
+  /* ---------- parte de humor / cuidado ---------- */
+
+  .mood-buttons{
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+
+  .mood-decor{
+    position: relative;
+    width: min(460px, 94vw);
+    height: 190px;
+    margin-top: 14px;
+  }
+
+  .paper-tulip{
+    position: absolute;
+    bottom: 0;
+    filter: drop-shadow(0 4px 5px rgba(74,51,36,0.18));
+  }
+  .paper-tulip.pop{
+    animation: tulipPop 0.6s cubic-bezier(.2,.9,.3,1.3) both;
+  }
+  @keyframes tulipPop{
+    0%{ transform: translateY(14px) scale(0.7) rotate(var(--r, 0deg)); opacity:0; }
+    100%{ transform: translateY(0) scale(1) rotate(var(--r, 0deg)); opacity:1; }
+  }
+
+
+  .btn-soft{
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    border: 1.5px solid var(--rose-deep);
+    background: transparent;
+    color: var(--rose-deep);
+    cursor:pointer;
+    transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+  }
+  .btn-soft:hover{ background: var(--rose-deep); color: #fff8f2; transform: translateY(-2px); }
+
+  .btn-solid{
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    border:none;
+    background: var(--rose-deep);
+    color: #fff8f2;
+    cursor:pointer;
+    box-shadow: 0 10px 22px -8px rgba(169,74,92,0.5);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+  .btn-solid:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -8px rgba(169,74,92,0.55); }
+
+  .option-stack{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    width: min(360px, 92vw);
+  }
+
+  .option-card{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    background: var(--polaroid);
+    border: 1px solid rgba(74,51,36,0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 10px 20px -12px var(--shadow);
+    cursor: pointer;
+    text-align:left;
+    font-family:'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  }
+  .option-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px -14px var(--shadow);
+    background: var(--paper-2);
+  }
+  .option-card .emoji{ font-size: 24px; line-height:1; }
+  .option-card.chosen{
+    background: var(--rose-deep);
+    color: #fff8f2;
+  }
+
+  .vent-box{
+    width: min(400px, 92vw);
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    align-items:center;
+  }
+
+  textarea.vent-textarea{
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    border-radius: 14px;
+    border: 1.5px solid rgba(74,51,36,0.18);
+    background: var(--polaroid);
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    color: var(--ink);
+    box-shadow: inset 0 2px 6px rgba(74,51,36,0.06);
+  }
+  textarea.vent-textarea:focus{
+    outline: none;
+    border-color: var(--rose-deep);
+  }
+  textarea.vent-textarea::placeholder{ color: var(--ink-soft); opacity:0.6; }
+
+  .confirm-emoji{
+    font-size: 44px;
+    margin-bottom: 8px;
+    animation: pop 0.7s cubic-bezier(.2,.9,.3,1.3);
+  }
+
+  .toast{
+    position: fixed;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 50;
+    max-width: 88vw;
+    text-align:center;
+  }
+  .toast.show{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ---------- cartão do convite (atualizável) ---------- */
+
+  .invite-float{
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    background: var(--polaroid);
+    border: 1.5px dashed var(--gold);
+    border-radius: 999px;
+    padding: 12px 22px;
+    box-shadow: 0 14px 28px -12px var(--shadow);
+    cursor:pointer;
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    z-index: 40;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+  .invite-float:hover{
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 18px 32px -12px var(--shadow);
+  }
+  .invite-float .env-emoji{ font-size: 18px; }
+  .invite-badge{
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    background: var(--rose-deep);
+    color: #fff8f2;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 999px;
+    box-shadow: 0 6px 14px -4px rgba(169,74,92,0.6);
+    animation: pop 0.6s cubic-bezier(.2,.9,.3,1.3);
+    white-space: nowrap;
+  }
+  .invite-badge.hidden{ display:none; }
+
+  /* painel oculto, só visível com ?admin=1 na URL */
+  .admin-panel{
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-size: 12px;
+    max-width: 240px;
+    z-index: 60;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  }
+  .admin-panel button{
+    margin-top: 8px;
+    width: 100%;
+    font-family:'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 999px;
+    border:none;
+    background: var(--rose-deep);
+    color: #fff8f2;
+    cursor:pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ===================== PRIMEIRA COISA: como ela está se sentindo ===================== -->
+
+  <section id="sceneMood">
+    <div class="eyebrow fade-el">antes de qualquer coisa</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">oi, amor. como você está se sentindo hoje?</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s">pode ser sincera comigo, eu realmente quero saber.</p>
+    <div class="mood-buttons fade-el" style="animation-delay:0.2s">
+      <button class="btn-solid" id="feelGoodBtn">estou bem 💛</button>
+      <button class="btn-soft" id="feelBadBtn">não muito bem 🥺</button>
+    </div>
+
+    <div class="mood-decor fade-el" style="animation-delay:0.3s">
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <symbol id="paperTulipShape" viewBox="0 0 40 92">
+            <line x1="20" y1="48" x2="20" y2="90" stroke="#7a9b5c" stroke-width="3" stroke-linecap="round"/>
+            <path d="M20 58 C11 62 15 74 20 78 C25 74 29 62 20 58 Z" fill="#8fae6c"/>
+            <path d="M20 6 C10 6 8 20 8 29 C8 39 14 46 20 51 C26 46 32 39 32 29 C32 20 30 6 20 6 Z" fill="currentColor"/>
+            <path d="M20 6 C15 8 11 18 12 29 C13 37 16 44 20 49 L20 6 Z" fill="rgba(74,51,36,0.12)"/>
+            <path d="M20 6 L20 49 C24 44 27 37 28 29 C29 18 25 8 20 6 Z" fill="rgba(255,255,255,0.22)"/>
+            <path d="M20 6 C17 12 15 22 16 30" stroke="rgba(74,51,36,0.18)" stroke-width="1" fill="none"/>
+          </symbol>
+        </defs>
+      </svg>
+
+      <svg class="paper-tulip pop" style="--r:-8deg; left:2%;  width:34px; height:78px; animation-delay:0.05s; color:var(--rose-deep);   transform:rotate(-8deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:6deg;  left:16%; width:40px; height:92px; animation-delay:0.15s; color:var(--rose);        transform:rotate(6deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:-4deg; left:31%; width:30px; height:68px; animation-delay:0.1s;  color:var(--gold);        transform:rotate(-4deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:5deg;  left:45%; width:44px; height:98px; animation-delay:0.25s; color:#c9707e;            transform:rotate(5deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:-7deg; left:60%; width:34px; height:78px; animation-delay:0.2s;  color:var(--rose-deep);   transform:rotate(-7deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:3deg;  left:74%; width:38px; height:88px; animation-delay:0.3s;  color:#d9a24a;            transform:rotate(3deg);"><use href="#paperTulipShape"/></svg>
+      <svg class="paper-tulip pop" style="--r:-6deg; left:88%; width:30px; height:70px; animation-delay:0.18s; color:var(--rose);        transform:rotate(-6deg);"><use href="#paperTulipShape"/></svg>
+    </div>
+  </section>
+
+  <!-- caminho: ela está bem -->
+  <section id="sceneActivity">
+    <div class="eyebrow fade-el">que bom!</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">quer fazer algo comigo?</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s">escolhe uma opção:</p>
+    <div class="option-stack fade-el" style="animation-delay:0.2s" id="activityOptions">
+      <button class="option-card" data-value="ir no contorno conversar">
+        <span class="emoji">🚗</span> ir no contorno conversar
+      </button>
+      <button class="option-card" data-value="jogar uma sinuca">
+        <span class="emoji">🎱</span> jogar uma sinuca
+      </button>
+      <button class="option-card" data-value="ir na adega tomar alguma coisa">
+        <span class="emoji">🍷</span> ir na adega tomar alguma coisa
+      </button>
+    </div>
+  </section>
+
+  <section id="sceneActivityConfirm">
+    <div class="confirm-emoji fade-el">💛</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">combinado!</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s" id="activityConfirmText">já já te chamo pra irmos.</p>
+  </section>
+
+  <!-- caminho: ela não está bem -->
+  <section id="sceneVent">
+    <div class="eyebrow fade-el">sinto muito</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">quer me contar o que houve?</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s">escreve à vontade, eu quero entender e te ajudar no que der.</p>
+    <div class="vent-box fade-el" style="animation-delay:0.2s">
+      <textarea class="vent-textarea" id="ventText" placeholder="pode escrever aqui..."></textarea>
+      <button class="btn-solid" id="sendVentBtn">enviar</button>
+    </div>
+  </section>
+
+  <section id="sceneGift">
+    <div class="eyebrow fade-el">deixa eu tentar ajudar</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">o que você acha que ia te ajudar agora?</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s">escolhe uma opção:</p>
+    <div class="option-stack fade-el" style="animation-delay:0.2s" id="giftOptions">
+      <button class="option-card" data-value="flores">
+        <span class="emoji">💐</span> flores
+      </button>
+      <button class="option-card" data-value="chocolates">
+        <span class="emoji">🍫</span> chocolates
+      </button>
+      <button class="option-card" data-value="uma dose de Licor 43">
+        <span class="emoji">🥃</span> uma dose de Licor 43
+      </button>
+      <button class="option-card" data-value="só sair pra conversar e desabafar">
+        <span class="emoji">💬</span> só sair pra conversar e desabafar
+      </button>
+    </div>
+  </section>
+
+  <section id="sceneGiftConfirm">
+    <div class="confirm-emoji fade-el">🤍</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">tô indo cuidar de você</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.15s" id="giftConfirmText">já anotei aqui, amor.</p>
+  </section>
+
+  <!-- ===================== O CONVITE ===================== -->
+
+  <section id="scene1">
+    <div class="eyebrow">um convite</div>
+    <div class="washi-line"></div>
+    <h1 class="title">Oi, Amor :)</h1>
+    <p class="subtitle">Separei umas fotos nossas antes de te perguntar uma coisa.</p>
+
+    <div class="polaroid-rack">
+      <div class="polaroid" id="p1">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto0.jpg" alt="foto do casal 1">
+        <div class="polaroid-cap">minha foto preferida ❤️</div>
+      </div>
+      <div class="polaroid" id="p2">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto1.jpg" alt="foto do casal 2">
+        <div class="polaroid-cap">Dia de Copa </div>
+      </div>
+      <div class="polaroid" id="p3">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto3.jpg" alt="foto do casal 3">
+        <div class="polaroid-cap">nós dois</div>
+      </div>
+    </div>
+
+    <div class="ask-box">
+      <h1 class="title" style="font-size: clamp(32px,7vw,46px)">quer sair comigo?</h1>
+      <div class="buttons-area">
+        <button class="btn btn-yes" id="yesBtn">sim!</button>
+        <button class="btn btn-no" id="noBtn">não</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="scene2">
+    <div class="heart-burst fade-el">💛</div>
+    <h1 class="title fade-el" style="animation-delay:0.1s">Ainda bem que aceitou, até porque não tinha como clicar em não ksksk</h1>
+    <p class="subtitle fade-el" style="animation-delay:0.2s">mais umas fotos nossas pra comemorar, com trilha sonora inclusa.</p>
+
+    <button class="music-note fade-el" id="musicBtn" style="animation-delay:0.25s; background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      tocando: Rihanna - Stay <span style="opacity:0.6"></span>
+    </button>
+
+    <audio id="bgm" src="Rihanna - Stay.mp3" preload="auto"></audio>
+.
+    <div class="polaroid-rack fade-el" style="animation-delay:0.3s; margin-top: 10px;">
+      <div class="polaroid" id="p4">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto2.jpg" alt="foto do casal 4">
+        <div class="polaroid-cap">saiu fora de foco, mas gostei!</div>
+      </div>
+      <div class="polaroid" id="p5">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto5.jpg" alt="foto do casal 5">
+        <div class="polaroid-cap">foto de beijos </div>
+      </div>
+      <div class="polaroid" id="p6">
+        <div class="pin"></div>
+        <img class="polaroid-img" src="fotos/foto6.jpg" alt="foto do casal 6">
+        <div class="polaroid-cap">Final de role :(</div>
+      </div>
+    </div>
+
+    <button class="next-btn fade-el" id="nextBtn" style="animation-delay:0.4s">pra onde vamos? →</button>
+  </section>
+
+  <section id="scene3">
+    <div class="eyebrow fade-el">nosso próximo encontro</div>
+    <div class="dest-card">
+      <img class="dest-img" src="fotos/foto-destino.jpg" alt="foto do lugar do encontro">
+      <div class="dest-cap">la forneria🍕</div>
+      <div class="dest-sub">Jessica, meu amor,
+Você é aquele tipo de sorte boa que a vida me deu sem eu nem pedir. Cada dia ao seu lado é mais leve, mais bonito, mais cheio de sentido. Seu sorriso tem esse jeito de acalmar qualquer tempestade que eu tenha por dentro, e seu carinho me faz sentir em casa, não importa onde eu esteja.
+Obrigado por existir do jeito que você é, por me escolher todos os dias, e por fazer parte da minha história. Eu te amo mais do que consigo colocar em palavras — e mesmo assim, vou passar a vida inteira tentando encontrar as certas.
+Sua, para sempre.💛</div>
+    </div>
+    <p class="subtitle fade-el" style="margin-top:28px;" id="dateNote">i want you staaaaayyyyy</p>
+  </section>
+
+  <footer class="credit">feito com carinho, só pra você</footer>
+</div>
+
+<button class="invite-float" id="inviteFloatBtn">
+  <span class="invite-badge hidden" id="inviteBadge">novo!</span>
+  <span class="env-emoji">💌</span>
+  <span class="invite-float-label">convite</span>
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ---------------------------------------------------------------
+  // CONFIGURAÇÃO
+  // ---------------------------------------------------------------
+
+  // tópico onde VOCÊ recebe notificações (quando ela responde algo)
+  const NTFY_TO_OTAVIO = 'https://ntfy.sh/otavio-convite-jessica-8k3f2';
+
+  // tópico onde ELA recebe notificações (quando você atualiza o convite)
+  // ela precisa se inscrever UMA VEZ nesse tópico pelo app ntfy (ou ntfy.sh)
+  const NTFY_TO_JESSICA = 'https://ntfy.sh/jessica-convite-atualizacoes-7q2m9';
+
+  // toda vez que você mudar algo no "convite" (destino, foto, mensagem)
+  // aumente esse número em +1 antes de subir a atualização.
+  // é isso que faz o selinho "novo!" aparecer pra ela.
+  const CONVITE_VERSION = 1;
+
+  // ---------------------------------------------------------------
+
+  function showToast(msg){
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 2600);
+  }
+
+  function notifyOtavio(message){
+    fetch(NTFY_TO_OTAVIO, {
+      method: 'POST',
+      body: message
+    }).catch(function(){});
+  }
+
+  function notifyJessica(message){
+    fetch(NTFY_TO_JESSICA, {
+      method: 'POST',
+      body: message
+    }).catch(function(){});
+  }
+
+  const INVITE_SCENES = ['scene1', 'scene2', 'scene3'];
+
+  function showScene(id){
+    document.querySelectorAll('section[id^="scene"]').forEach(function(s){
+      s.style.display = 'none';
+    });
+    const el = document.getElementById(id);
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
+    el.style.alignItems = 'center';
+
+    const floatBtn = document.getElementById('inviteFloatBtn');
+    floatBtn.style.display = INVITE_SCENES.indexOf(id) === -1 ? 'flex' : 'none';
+  }
+
+  // ----- selinho de "convite atualizado" (fica salvo no navegador dela) -----
+
+  function getSeenVersion(){
+    const v = localStorage.getItem('jessica_convite_seen_version');
+    return v ? parseInt(v, 10) : 0;
+  }
+
+  function markConviteAsSeen(){
+    localStorage.setItem('jessica_convite_seen_version', String(CONVITE_VERSION));
+    document.getElementById('inviteBadge').classList.add('hidden');
+  }
+
+  function checkConviteUpdate(){
+    if(CONVITE_VERSION > getSeenVersion()){
+      document.getElementById('inviteBadge').classList.remove('hidden');
+    }
+  }
+
+  // ----- primeira tela: como ela está se sentindo -----
+
+  document.getElementById('feelGoodBtn').addEventListener('click', function(){
+    notifyOtavio('💛 Ela está se sentindo bem!');
+    showScene('sceneActivity');
+  });
+
+  document.getElementById('feelBadBtn').addEventListener('click', function(){
+    notifyOtavio('🥺 Ela disse que não está se sentindo muito bem...');
+    showScene('sceneVent');
+  });
+
+  // opções de atividade (quando ela está bem)
+  document.querySelectorAll('#activityOptions .option-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      document.querySelectorAll('#activityOptions .option-card').forEach(function(c){ c.classList.remove('chosen'); });
+      card.classList.add('chosen');
+      const value = card.getAttribute('data-value');
+      notifyOtavio('Ela quer: ' + value + ' 💛');
+      document.getElementById('activityConfirmText').textContent = 'combinado: ' + value + '. já te chamo!';
+      setTimeout(function(){ showScene('sceneActivityConfirm'); }, 450);
+    });
+  });
+
+  // envio do desabafo
+  document.getElementById('sendVentBtn').addEventListener('click', function(){
+    const text = document.getElementById('ventText').value.trim();
+    if(text.length === 0){
+      showToast('escreve alguma coisa antes de enviar, amor 🤍');
+      return;
+    }
+    notifyOtavio('Ela escreveu: "' + text + '"');
+    showScene('sceneGift');
+  });
+
+  // opções de presente / conversa (quando ela não está bem)
+  document.querySelectorAll('#giftOptions .option-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      document.querySelectorAll('#giftOptions .option-card').forEach(function(c){ c.classList.remove('chosen'); });
+      card.classList.add('chosen');
+      const value = card.getAttribute('data-value');
+      notifyOtavio('Ela escolheu: ' + value);
+      document.getElementById('giftConfirmText').textContent = 'já vou providenciar: ' + value + '. te amo.';
+      setTimeout(function(){ showScene('sceneGiftConfirm'); }, 450);
+    });
+  });
+
+  // ----- botão fixo do convite (sempre visível, no rodapé) -----
+
+  document.getElementById('inviteFloatBtn').addEventListener('click', function(){
+    markConviteAsSeen();
+    showScene('scene1');
+  });
+
+  // ----- o convite em si -----
+
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const buttonsArea = document.querySelector('.buttons-area');
+  const nextBtn = document.getElementById('nextBtn');
+  const bgm = document.getElementById('bgm');
+
+  function playWonderwall(){
+    bgm.currentTime = 0;
+    bgm.play().catch(function(){});
+  }
+
+  function dodge(){
+    const areaRect = buttonsArea.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+    const maxLeft = Math.max(areaRect.width - btnRect.width, 0);
+    const maxTop = Math.max(areaRect.height - btnRect.height, 0) + 30;
+    const newLeft = Math.random() * maxLeft;
+    const newTop = (Math.random() * maxTop) - 15;
+    noBtn.style.left = newLeft + 'px';
+    noBtn.style.top = newTop + 'px';
+  }
+
+  noBtn.addEventListener('mouseenter', dodge);
+  noBtn.addEventListener('touchstart', function(e){
+    e.preventDefault();
+    dodge();
+  }, { passive:false });
+  noBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    dodge();
+  });
+
+  yesBtn.addEventListener('click', function(){
+    showScene('scene2');
+    playWonderwall();
+    notifyOtavio('Ela clicou em SIM! 💛');
+  });
+
+  document.getElementById('musicBtn').addEventListener('click', playWonderwall);
+
+  nextBtn.addEventListener('click', function(){
+    showScene('scene3');
+  });
+
+  // ---------------------------------------------------------------
+  // PAINEL DE ADMIN (só aparece se você abrir o link com ?admin=1)
+  // usado por VOCÊ pra avisar a Jessica que atualizou o convite
+  // ---------------------------------------------------------------
+
+  function initAdminPanel(){
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('admin') !== '1') return;
+
+    const panel = document.createElement('div');
+    panel.className = 'admin-panel';
+    panel.innerHTML =
+      '<div>modo admin — versão atual do convite: ' + CONVITE_VERSION + '</div>' +
+      '<button id="notifyUpdateBtn">🔔 avisar Jessica que atualizei</button>';
+    document.body.appendChild(panel);
+
+    document.getElementById('notifyUpdateBtn').addEventListener('click', function(){
+      notifyJessica('💌 seu convite foi atualizado, vem ver!');
+      this.textContent = 'notificação enviada ✓';
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // INÍCIO: a primeira coisa que ela vê é a pergunta de humor
+  // ---------------------------------------------------------------
+
+  showScene('sceneMood');
+  checkConviteUpdate();
+  initAdminPanel();
+</script>
+
+</body>
+</html>
